@@ -18,7 +18,7 @@ jobs:
 
       - name: Push to Hugging Face
         run: |
-          git config --global user.email "you@example.com"
-          git config --global user.name "Your Name"
-          git remote add hf https://huggingface.co/spaces/your-username/your-app-name
+          git config --global user.email "ashikantony23@gmail.com"
+          git config --global user.name "ashikantony13"
+          git remote add hf https://huggingface.co/spaces/ashikantony13/minigpt-lab
           git push hf main
