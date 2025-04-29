@@ -1,26 +1,22 @@
-# MiniGPT Lab 🤖📝
-Train your own GPT Assistant on Personal Notes & Docs!
+# 🧠 MiniGPT Lab
 
-## Features
-- Upload your notes, journals, Notion exports
-- Fine-tune open-source GPT models
-- Real-time chat interface
-- Voice assistant interaction
-- Works locally, no cloud dependency!
+Chat with your personal notes and journals — powered by a mini GPT model!
 
-## Demo
-[Include demo video or Streamlit link]
+## 🚀 Features
+- Upload your own `.txt` files (journals, notes, tips).
+- Finetune a distilled GPT (Tiny-GPT2) on your data.
+- Live chat interface with a smart assistant.
+- Voice assistant ready (coming soon!).
+- Docker-ready, Hugging Face deployable.
 
-## Getting Started
-1. Clone repo
-2. Install dependencies
-3. Upload files
-4. Train your model
-5. Start chatting!
+## 🛠 Tech Stack
+- FastAPI (backend API)
+- Streamlit (frontend chat)
+- Transformers (Tiny-GPT2 model)
+- VS Code + Docker + GitHub Actions
 
-## Tech Stack
-GPT-J / FastAPI / LangChain / Streamlit / Hugging Face / Web Speech API
+## 📦 How to Run
 
-## Contributing
-- Check `CONTRIBUTING.md`
-- Add new file parsers, models, training strategies!
+**Backend API**
+```bash
+uvicorn main:app --reload
