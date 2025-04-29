@@ -1,0 +1,29 @@
+// 📁 File: .vscode/launch.json
+
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Run FastAPI",
+        "type": "python",
+        "request": "launch",
+        "module": "uvicorn",
+        "args": [
+          "main:app",
+          "--reload",
+          "--port",
+          "8000"
+        ],
+        "jinja": true
+      },
+      {
+        "name": "Run Streamlit",
+        "type": "python",
+        "request": "launch",
+        "program": "${workspaceFolder}/app.py",
+        "args": [],
+        "console": "integratedTerminal"
+      }
+    ]
+  }
+  
