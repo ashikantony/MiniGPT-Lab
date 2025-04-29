@@ -1,30 +1,24 @@
-name: Deploy to Hugging Face Spaces
-
-on:
-  push:
-    branches:
-      - main
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v3
 
-      - name: Setup Python
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.10"
+          python-version: 3.10
 
-      - name: Install requirements
-        run: |
-          pip install -r requirements.txt
+      - name: Install dependencies
+        run: pip install huggingface_hub
 
-      - name: Launch App
-        env:
-          HF_TOKEN: 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
+      - name: Login to Hugging Face
+        run: huggingface-cli login --token ${{ secrets.HF_TOKEN }}
+
+      - name: Push to Hugging Face
         run: |
-          pip install huggingface_hub
-          huggingface-cli login --token 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
-          huggingface-cli repo create mini-gpt-lab --type=space --sdk=streamlit --private
-          huggingface-cli upload mini-gpt-lab . --repo-type=space --commit-message "Initial Deploy"
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          git remote add hf https://huggingface.co/spaces/your-username/your-app-name
+          git push hf main
