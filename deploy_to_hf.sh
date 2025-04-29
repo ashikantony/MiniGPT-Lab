@@ -4,7 +4,7 @@
 echo "🚀 Deploying to Hugging Face Spaces..."
 
 # Login (only needed once)
-# huggingface-cli login --token YOUR_HF_TOKEN
+huggingface-cli login --https://huggingface.co/ashikantony13
 
 # Create space (only needed once)
 # huggingface-cli repo create mini-gpt-lab --type=space --sdk=streamlit --private
