@@ -22,9 +22,9 @@ jobs:
 
       - name: Launch App
         env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_TOKEN: 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
         run: |
           pip install huggingface_hub
-          huggingface-cli login --token $HF_TOKEN
+          huggingface-cli login --token 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
           huggingface-cli repo create mini-gpt-lab --type=space --sdk=streamlit --private
           huggingface-cli upload mini-gpt-lab . --repo-type=space --commit-message "Initial Deploy"
